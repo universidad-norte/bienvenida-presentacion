@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenida Nuevo Ingreso - Universidad del Norte</title>
+    <style>
+        /* Estilos Base y Paleta Institucional */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Encabezado Principal */
+        header {
+            background-color: #0d47a1; /* Azul Institucional */
+            color: #ffffff;
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 5px solid #ffb300; /* Acento Amarillo */
+        }
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        header p {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: #e3f2fd;
+        }
+
+        /* Sección de Mensaje de Bienvenida */
+        .welcome-box {
+            background-color: #ffffff;
+            padding: 30px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+        .welcome-box h2 {
+            color: #0d47a1;
+            margin-bottom: 15px;
+        }
+
+        /* Cuadrícula Adaptable con Bloques Tradicionales */
+        .row {
+            margin: 20px -10px;
+        }
+        .row::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        .col {
+            float: left;
+            width: 100%;
+            padding: 0 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Tarjetas de Información */
+        .card {
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 8px;
+            min-height: 250px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-top: 4px solid #0d47a1;
+        }
+        .card h3 {
+            color: #0d47a1;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #f4f6f9;
+            padding-bottom: 8px;
+        }
+        .card ul {
+            list-style-position: inside;
+            list-style-type: square;
+            padding-left: 5px;
+        }
+        .card li {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        /* Sección Interactiva: Pestañas de Reglamento / Enlaces */
+        .tabs-container {
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 20px 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .tab-buttons {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .tab-btn {
+            background-color: #e3f2fd;
+            border: none;
+            color: #0d47a1;
+            padding: 12px 24px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1rem;
+            border-radius: 4px;
+            margin: 5px;
+            transition: background 0.3s;
+        }
+        .tab-btn.active, .tab-btn:hover {
+            background-color: #0d47a1;
+            color: #ffffff;
+        }
+        .tab-content {
+            display: none;
+            padding: 15px;
+            background: #fafafa;
+            border-radius: 4px;
+            border-left: 4px solid #ffb300;
+        }
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Pie de Página */
+        footer {
+            background-color: #212121;
+            color: #ffffff;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 40px;
+            font-size: 0.9rem;
+        }
+        footer a {
+            color: #ffb300;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Media Queries para Tabletas y Dispositivos Medianos */
+        @media (min-width: 600px) {
+            .col {
+                width: 50%;
+            }
+            header h1 {
+                font-size: 2.8rem;
+            }
+        }
+
+        /* Media Queries para Pantallas de Escritorio */
+        @media (min-width: 992px) {
+            .col {
+                width: 33.33%;
+            }
+        }
+
+        .directores-seccion {
+            padding: 40px 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            margin: 20px 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+        .seccion-titulo {
+            color: #0d47a1;
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+        .seccion-subtitulo {
+            color: #666;
+            font-size: 1rem;
+            margin-bottom: 30px;
+        }
+        /* Grid responsivo sin usar flexbox avanzado para máxima compatibilidad */
+        .directores-grid {
+            margin: 0 -10px;
+        }
+        .directores-grid::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        .director-card {
+            float: left;
+            width: 100%;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #e3f2fd;
+            border-radius: 8px;
+            background: #fafafa;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .director-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(13, 71, 161, 0.1);
+            background: #ffffff;
+        }
+        .avatar-container {
+            width: 130px;
+            height: 130px;
+            margin: 0 auto 15px auto;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid #ffb300; /* Círculo con el color de acento */
+        }
+        .director-foto {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .director-card h3 {
+            color: #333;
+            font-size: 1.15rem;
+            margin-bottom: 5px;
+        }
+        .director-card .puesto {
+            color: #0d47a1;
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+        .director-card .contacto-email {
+            color: #757575;
+            font-size: 0.85rem;
+        }
+
+        /* Ajuste para Tabletas y Computadoras */
+        @media (min-width: 600px) {
+            .director-card {
+                width: 33.33%; /* Ajusta este porcentaje según cuántos directores tengas (ej. 50% si son dos) */
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Universidad del Norte</h1>
+        <p>¡Cambiando Vidas!</p>
+    </header>
+
+    <div class="container">
+        
+        <section class="welcome-box">
+            <h2>¡Bienvenidos Alumnos de Nuevo Ingreso!</h2>
+            <p>Te acompañamos en el camino hacia el desarrollo de tus competencias profesionales y la construcción de tu proyecto de vida exitoso.</p>
+        </section>
+
+        <section class="directores-seccion">
+            <h2 class="seccion-titulo">Conoce al Equipo Directivo</h2>
+            <p class="seccion-subtitulo">Estamos aquí para acompañarte en cada paso de tu camino académico.</p>
+            
+            <div class="directores-grid">
+                <div class="director-card">
+                    <div class="avatar-container">
+                        <img src="directores/marcelo.png" alt="Rector" class="director-foto">
+                    </div>
+                    <h3>ING. MARCELO J. GONZÁLEZ VILLARREAL, M.A.</h3>
+                    <p class="puesto">Rector de la Universidad</p>
+                    <!-- <p class="contacto-email">✉️ jc.perez@un.edu.mx</p> -->
+                </div>
+
+                <div class="director-card">
+                    <div class="avatar-container">
+                        <img src="directores/gregorio.png" alt="Preparatorio General" class="director-foto">
+                    </div>
+                    <h3>LIC. JOSÉ GREGORIO PEÑA SÁNCHEZ, M.E.U.</h3>
+                    <p class="puesto">Preparatorio General</p>
+                    <p class="contacto-email">✉️ gregorio.pena@un.edu.mx</p>
+                </div>
+
+                <div class="director-card">
+                    <div class="avatar-container">
+                        <img src="directores/martin.png" alt="Director de Humanidades y Ciencias Sociales" class="director-foto">
+                    </div>
+                    <h3>LIC. MARTÍN ANTONIO RODRÍGUEZ CANALES, M.E.U.</h3>
+                    <p class="puesto">Director de Humanidades y Ciencias Sociales</p>
+                    <p class="contacto-email">✉️ martin.rodriguez@un.edu.mx</p>
+                </div>
+
+                <div class="director-card">
+                    <div class="avatar-container">
+                        <img src="directores/iran.png" alt="Secretario General de Humanidades y Ciencias Sociales" class="director-foto">
+                    </div>
+                    <h3>ING. IRAN BRIONES GAMEZ,  M.E.U.</h3>
+                    <p class="puesto">Director de Humanidades y Ciencias Sociales</p>
+                    <p class="contacto-email">✉️ martin.rodriguez@un.edu.mx</p>
+                </div>
+
+                <div class="director-card">
+                    <div class="avatar-container">
+                        <img src="directores/pablo.png" alt="Director de Ingeniería e Informática" class="director-foto">
+                    </div>
+                    <h3>ING. PABLO CHAPA CORTEZ,  M.A.N.</h3>
+                    <p class="puesto">Director de Ingeniería e Informática</p>
+                    <p class="contacto-email">✉️ pablo.chapa@un.edu.mx</p>
+                </div>
+
+                <div class="director-card">
+                    <div class="avatar-container">
+                        <img src="directores/arturo.png" alt="Secretario de Ingeniería" class="director-foto">
+                    </div>
+                    <h3>ING. ARTURO ORTÍZ NAVARRO</h3>
+                    <p class="puesto">Secretario de Ingeniería</p>
+                    <p class="contacto-email">✉️ arturo.ortizn@un.edu.mx</p>
+                </div>
+
+                <div class="director-card">
+                    <div class="avatar-container">
+                        <img src="directores/ricardo.png" alt="Secretario de Tecnologías de Información" class="director-foto">
+                    </div>
+                    <h3>ING. RICARDO ELIZALDE HERNANDEZ, M.A.T.I.</h3>
+                    <p class="puesto">Secretario de Tecnologías de Información</p>
+                    <p class="contacto-email">✉️ ricardo.elizaldeh@un.edu.mx</p>
+                </div>
+
+                <div class="director-card">
+                    <div class="avatar-container">
+                        <img src="directores/nidia.png" alt="Directora de Ciencias Jurídicas" class="director-foto">
+                    </div>
+                    <h3>LIC. NIDIA CEBALLOS VELA, M.E.U.</h3>
+                    <p class="puesto">Directora de Ciencias Jurídicas</p>
+                    <p class="contacto-email">✉️ nidia.ceballos@un.edu.mx</p>
+                </div>
+
+                <div class="director-card">
+                    <div class="avatar-container">
+                        <img src="directores/guillermo.png" alt="Director de Psicología" class="director-foto">
+                    </div>
+                    <h3>LIC. GUILLERMO ROSALES HERNÁNDEZ, M.P.C.P</h3>
+                    <p class="puesto">Director de Psicología</p>
+                    <p class="contacto-email">✉️ guillermo.rosales@un.edu.mx</p>
+                </div>
+
+                <div class="director-card">
+                    <div class="avatar-container">
+                        <img src="directores/martha.png" alt="Directora de Posgrado y Dirección Académica" class="director-foto">
+                    </div>
+                    <h3>LIC. MARTHA LAURA CRÚZ PÉREZ, M.E.U.</h3>
+                    <p class="puesto">Directora de Posgrado y Dirección Académica</p>
+                    <p class="contacto-email">✉️ martha.cruz@un.edu.mx</p>
+                </div>
+
+                <div class="director-card">
+                    <div class="avatar-container">
+                        <img src="directores/maelena.png" alt="Coordinadora de Sistema Modular" class="director-foto">
+                    </div>
+                    <h3>LIC. MARÍA ELENA PÉREZ GARCÍA, M.E.U.</h3>
+                    <p class="puesto">Coordinadora de Sistema Modular</p>
+                    <p class="contacto-email">✉️ mariaelena.perez@un.edu.mx</p>
+                </div>
+
+                <div class="director-card">
+                    <div class="avatar-container">
+                        <img src="directores/jesus.png" alt="Coordinador Deportivo" class="director-foto">
+                    </div>
+                    <h3>LIC. JESÚS F. GARCÍA SÁNCHEZ</h3>
+                    <p class="puesto">Coordinador Deportivo</p>
+                    <p class="contacto-email">✉️ jesus.garcias@un.edu.mx</p>
+                </div>
+
+                <div class="director-card">
+                    <div class="avatar-container">
+                        <img src="directores/horacio.png" alt="Prefectura Mantenimiento y Seguridad" class="director-foto">
+                    </div>
+                    <h3>ING. HORACIO DELGADO ALVAREZ</h3>
+                    <p class="puesto">Jefe de Prefectura Mantenimiento y Seguridad</p>
+                    <p class="contacto-email">✉️ horacio.delgado@un.edu.mx</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="row">
+            <div class="col">
+                <div class="card">
+                    <h3>Servicios Estudiantiles</h3>
+                    <ul>
+                        <li>Asesorías Académicas</li>
+                        <li>Departamento Psicopedagógico</li>
+                        <li>Bolsa de Trabajo y Prácticas</li>
+                        <li>Coordinación de Deportes</li>
+                        <li>Asuntos Estudiantiles (DAE)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card">
+                    <h3>Nuestras Instalaciones</h3>
+                    <ul>
+                        <li>Biblioteca "C.P. Ramón Cárdenas C."</li>
+                        <li>Laboratorios de Cómputo y Redes</li>
+                        <li>Laboratorios de Ciencias y Talleres</li>
+                        <li>Sala de Juicios Orales</li>
+                        <li>Canchas y Áreas Recreativas</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card">
+                    <h3>Eventos e Impacto</h3>
+                    <ul>
+                        <li>Conferencias y Visitas a Empresas</li>
+                        <li>Feria del Libro y de Ciencias</li>
+                        <li>Feria del Empleo Anual</li>
+                        <li>Servicio de Apoyo a la Comunidad</li>
+                        <li>Fábrica de Sonrisas</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="tabs-container">
+            <div class="tab-buttons">
+                <button class="tab-btn active" onclick="switchTab(event, 'reglamento')">Reglamento Esencial</button>
+                <button class="tab-btn" onclick="switchTab(event, 'digital')">Portales Digitales</button>
+            </div>
+
+            <div id="reglamento" class="tab-content active">
+                <h4 style="color:#0d47a1; margin-bottom:10px;">Compromisos del Estudiante:</h4>
+                <p>• Cumplir con los valores de Puntualidad y Asistencia.</p>
+                <p>• Respetar el Código de Imagen Institucional.</p>
+                <p>• <strong>Universidad Libre de Tabaco:</strong> Prohibido el uso de cigarros tradicionales y electrónicos.</p>
+                <p>• Evitar introducir alimentos y bebidas a las aulas y laboratorios.</p>
+            </div>
+
+            <div id="digital" class="tab-content">
+                <h4 style="color:#0d47a1; margin-bottom:10px;">Accesos Rápidos:</h4>
+                <p>• Sitio Oficial: <a href="http://un.edu.mx" target="_blank" style="color:#0d47a1;">un.edu.mx</a></p>
+                <p>• Aula Virtual: <a href="http://un.neolms.com" target="_blank" style="color:#0d47a1;">un.neolms.com</a></p>
+                <p>• Redes Sociales Oficiales: <strong>@UNMTY</strong> / <strong>@UN_MTY</strong></p>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Universidad del Norte. Todos los derechos reservados.</p>
+        <p>Inspirar. Innovar. Servir.</p>
+    </footer>
+
+    <script>
+        function switchTab(evt, tabId) {
+            var i, tabcontent, tablinks;
+            
+            // Ocultar todos los contenidos de las pestañas
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].className = tabcontent[i].className.replace(" active", "");
+            }
+
+            // Quitar la clase active de todos los botones
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+            // Mostrar la pestaña actual y marcar el botón como activo
+            document.getElementById(tabId).className += " active";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+</body>
+</html>
