@@ -36,6 +36,13 @@
             font-style: italic;
             color: #e3f2fd;
         }
+        .header-logo {
+            display: inline-block;
+            width: 100%;
+            max-width: 836px; /* Evita que se estire de más en pantallas gigantes */
+            height: auto;     /* Mantiene la proporción perfecta al encogerse */
+            vertical-align: middle;
+        }
 
         /* Sección de Mensaje de Bienvenida */
         .welcome-box {
@@ -165,6 +172,9 @@
             }
         }
 
+        /* ========================================================
+           SECCIÓN DIRECTORES - PROPUESTA 1 (Tarjetas Modernas)
+           ======================================================== */
         .directores-seccion {
             padding: 40px 20px;
             background-color: #ffffff;
