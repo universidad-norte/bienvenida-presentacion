@@ -299,5 +299,13 @@
             .ancho-3-directores {
                 width: 33.33%;
             }
+
+            /* Otras áreas tiene 4 directores: se acomodan en bloques de 50% (2 arriba y 2 abajo) */
+            .ancho-4-directores {
+                width: 50%;
+                float: left;
+                text-align: center;
+            }
+            
         }
 
