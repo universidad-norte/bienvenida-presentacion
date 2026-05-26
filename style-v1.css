@@ -1,0 +1,259 @@
+        /* Estilos Base y Paleta Institucional */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Encabezado Principal */
+        header {
+            background-color: #0d47a1; /* Azul Institucional */
+            color: #ffffff;
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 5px solid #ffb300; /* Acento Amarillo */
+        }
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        header p {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: #e3f2fd;
+        }
+        .header-logo {
+            display: inline-block;
+            width: 100%;
+            max-width: 836px; /* Evita que se estire de más en pantallas gigantes */
+            height: auto;     /* Mantiene la proporción perfecta al encogerse */
+            vertical-align: middle;
+        }
+
+        /* Sección de Mensaje de Bienvenida */
+        .welcome-box {
+            background-color: #ffffff;
+            padding: 30px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+        .welcome-box h2 {
+            color: #0d47a1;
+            margin-bottom: 15px;
+        }
+
+
+        
+
+        /* Cuadrícula Adaptable con Bloques Tradicionales */
+        .row {
+            margin: 20px -10px;
+        }
+        .row::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        .col {
+            float: left;
+            width: 100%;
+            padding: 0 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Tarjetas de Información */
+        .card {
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 8px;
+            min-height: 250px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-top: 4px solid #0d47a1;
+        }
+        .card h3 {
+            color: #0d47a1;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #f4f6f9;
+            padding-bottom: 8px;
+        }
+        .card ul {
+            list-style-position: inside;
+            list-style-type: square;
+            padding-left: 5px;
+        }
+        .card li {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        /* Sección Interactiva: Pestañas de Reglamento / Enlaces */
+        .tabs-container {
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 20px 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .tab-buttons {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .tab-btn {
+            background-color: #e3f2fd;
+            border: none;
+            color: #0d47a1;
+            padding: 12px 24px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1rem;
+            border-radius: 4px;
+            margin: 5px;
+            transition: background 0.3s;
+        }
+        .tab-btn.active, .tab-btn:hover {
+            background-color: #0d47a1;
+            color: #ffffff;
+        }
+        .tab-content {
+            display: none;
+            padding: 15px;
+            background: #fafafa;
+            border-radius: 4px;
+            border-left: 4px solid #ffb300;
+        }
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Pie de Página */
+        footer {
+            background-color: #212121;
+            color: #ffffff;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 40px;
+            font-size: 0.9rem;
+        }
+        footer a {
+            color: #ffb300;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Media Queries para Tabletas y Dispositivos Medianos */
+        @media (min-width: 600px) {
+            .col {
+                width: 50%;
+            }
+            header h1 {
+                font-size: 2.8rem;
+            }
+        }
+
+        /* Media Queries para Pantallas de Escritorio */
+        @media (min-width: 992px) {
+            .col {
+                width: 33.33%;
+            }
+        }
+
+        /* ========================================================
+           SECCIÓN DIRECTORES - PROPUESTA 1 (Tarjetas Modernas)
+           ======================================================== */
+        .directores-seccion {
+            padding: 40px 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            margin: 20px 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+        .seccion-titulo {
+            color: #0d47a1;
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+        .seccion-subtitulo {
+            color: #666;
+            font-size: 1rem;
+            margin-bottom: 30px;
+        }
+        /* Grid responsivo sin usar flexbox avanzado para máxima compatibilidad */
+        .directores-grid {
+            margin: 0 -10px;
+        }
+        .directores-grid::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        .director-card {
+            float: left;
+            width: 100%;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #e3f2fd;
+            border-radius: 8px;
+            background: #fafafa;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .director-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(13, 71, 161, 0.1);
+            background: #ffffff;
+        }
+        .avatar-container {
+            width: 130px;
+            height: 130px;
+            margin: 0 auto 15px auto;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid #ffb300; /* Círculo con el color de acento */
+        }
+        .director-foto {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .director-card h3 {
+            color: #333;
+            font-size: 1.15rem;
+            margin-bottom: 5px;
+        }
+        .director-card .puesto {
+            color: #0d47a1;
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+        .director-card .contacto-email {
+            color: #757575;
+            font-size: 0.85rem;
+        }
+
+        /* Ajuste para Tabletas y Computadoras */
+        @media (min-width: 600px) {
+            .director-card {
+                width: 33.33%; /* Ajusta este porcentaje según cuántos directores tengas (ej. 50% si son dos) */
+                padding: 10px;
+            }
+        }
+    
