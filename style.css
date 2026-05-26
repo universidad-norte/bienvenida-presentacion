@@ -238,6 +238,30 @@
             font-size: 0.9rem;
         }
 
+                /* Estilo Profesional para el Botón del Reglamento PDF */
+        .btn-reglamento {
+            display: inline-block;
+            background-color: #ffb300; /* Amarillo institucional */
+            color: #212121;            /* Texto oscuro para excelente contraste y lectura */
+            padding: 14px 28px;
+            font-size: 1rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+        }
+
+        .btn-reglamento:hover {
+            background-color: #ffa000; /* Un tono un poco más oscuro al pasar el mouse */
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            transform: translateY(-2px); /* Efecto sutil de levante */
+        }
+
+        .btn-reglamento:active {
+            transform: translateY(0);
+        }
+
         /* ========================================================
            MEDIA QUERIES: SOLO PARA PANTALLAS HORIZONTALES / GRANDES
            ======================================================== */
@@ -276,3 +300,4 @@
                 width: 33.33%;
             }
         }
+
