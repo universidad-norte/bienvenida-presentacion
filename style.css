@@ -1,311 +1,311 @@
-        /* Estilos Base y Paleta Institucional */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f6f9;
-            color: #333;
-            line-height: 1.6;
-        }
-        .container {
-            width: 100%;
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        /* Encabezado Responsivo con Imagen */
-        header {
-            background-color: #0d47a1; /* Azul Institucional */
-            color: #ffffff;
-            padding: 40px 20px;
-            text-align: center;
-            border-bottom: 5px solid #ffb300; /* Acento Amarillo */
-        }
-        header h1 {
-            font-size: 2.2rem;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        header p {
-            font-size: 1.2rem;
-            font-style: italic;
-            color: #e3f2fd;
-        }
-        .header-logo {
-            display: inline-block;
-            width: 100%;
-            max-width: 836px;
-            height: auto;
-            vertical-align: middle;
-        }
+/* Estilos Base y Paleta Institucional */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+    line-height: 1.6;
+}
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
 
-        /* Sección de Mensaje de Bienvenida */
-        .welcome-box {
-            background-color: #ffffff;
-            padding: 30px;
-            margin: 20px 0;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            text-align: center;
-        }
-        .welcome-box h2 {
-            color: #0d47a1;
-            margin-bottom: 15px;
-        }
+/* Encabezado Responsivo con Imagen */
+header {
+    background-color: #0d47a1; /* Azul Institucional */
+    color: #ffffff;
+    padding: 40px 20px;
+    text-align: center;
+    border-bottom: 5px solid #ffb300; /* Acento Amarillo */
+}
+header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+header p {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #e3f2fd;
+}
+.header-logo {
+    display: inline-block;
+    width: 100%;
+    max-width: 836px;
+    height: auto;
+    vertical-align: middle;
+}
 
-        /* ========================================================
-           NUEVA SECCIÓN DE DIRECTORES POR ÁREA ACADÉMICA
-           ======================================================== */
-        .directores-seccion {
-            padding: 30px 20px;
-            background-color: #ffffff;
-            border-radius: 8px;
-            margin: 20px 0;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            text-align: center;
-        }
-        .seccion-titulo {
-            color: #0d47a1;
-            font-size: 1.8rem;
-            margin-bottom: 5px;
-        }
-        .seccion-subtitulo {
-            color: #666;
-            font-size: 1rem;
-            margin-bottom: 30px;
-        }
+/* Sección de Mensaje de Bienvenida */
+.welcome-box {
+    background-color: #ffffff;
+    padding: 30px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    text-align: center;
+}
+.welcome-box h2 {
+    color: #0d47a1;
+    margin-bottom: 15px;
+}
 
-        /* Títulos de las Áreas Académicas: OCULTOS por defecto en vertical (Móvil) */
-        .area-titulo {
-            display: none; 
-            width: 100%;
-            color: #ffb300;
-            background-color: #212121;
-            padding: 8px 15px;
-            margin: 25px 0 15px 0;
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border-radius: 4px;
-            text-align: left;
-        }
+/* ========================================================
+    NUEVA SECCIÓN DE DIRECTORES POR ÁREA ACADÉMICA
+    ======================================================== */
+.directores-seccion {
+    padding: 30px 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    margin: 20px 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    text-align: center;
+}
+.seccion-titulo {
+    color: #0d47a1;
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+.seccion-subtitulo {
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 30px;
+}
 
-        /* Contenedor Grid tradicional */
-        .directores-grid {
-            margin: 0 -10px;
-        }
-        .directores-grid::after {
-            content: "";
-            display: table;
-            clear: both;
-        }
-        
-        /* Tarjeta individual del director (Vista móvil por defecto: 100% ancho) */
-        .director-card {
-            float: left;
-            width: 100%;
-            padding: 20px;
-            margin-bottom: 20px;
-            border: 1px solid #e3f2fd;
-            border-radius: 8px;
-            background: #fafafa;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .director-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(13, 71, 161, 0.1);
-            background: #ffffff;
-        }
-        .avatar-container {
-            width: 130px;
-            height: 130px;
-            margin: 0 auto 15px auto;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 3px solid #0d47a1;
-        }
-        .director-foto {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .director-card h3 {
-            color: #333;
-            font-size: 1.15rem;
-            margin-bottom: 5px;
-        }
-        .director-card .puesto {
-            color: #0d47a1;
-            font-weight: bold;
-            font-size: 0.9rem;
-            margin-bottom: 10px;
-        }
-        .director-card .contacto-email {
-            color: #757575;
-            font-size: 0.85rem;
-        }
+/* Títulos de las Áreas Académicas: OCULTOS por defecto en vertical (Móvil) */
+.area-titulo {
+    display: none; 
+    width: 100%;
+    color: #ffb300;
+    background-color: #212121;
+    padding: 8px 15px;
+    margin: 25px 0 15px 0;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    text-align: left;
+}
 
-        /* Contenido General (Bloques Tradicionales) */
-        .row {
-            margin: 20px -10px;
-        }
-        .row::after {
-            content: "";
-            display: table;
-            clear: both;
-        }
-        .col {
-            float: left;
-            width: 100%;
-            padding: 0 10px;
-            margin-bottom: 20px;
-        }
-        .card {
-            background: #ffffff;
-            padding: 25px;
-            border-radius: 8px;
-            min-height: 250px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            border-top: 4px solid #0d47a1;
-        }
-        .card h3 {
-            color: #0d47a1;
-            margin-bottom: 15px;
-            border-bottom: 2px solid #f4f6f9;
-            padding-bottom: 8px;
-        }
-        .card ul {
-            list-style-position: inside;
-            list-style-type: square;
-            padding-left: 5px;
-        }
-        .card li {
-            margin-bottom: 8px;
-            font-size: 0.95rem;
-        }
+/* Contenedor Grid tradicional */
+.directores-grid {
+    margin: 0 -10px;
+}
+.directores-grid::after {
+    content: "";
+    display: table;
+    clear: both;
+}
 
-        /* Pestañas */
-        .tabs-container {
-            background: #ffffff;
-            padding: 25px;
-            border-radius: 8px;
-            margin: 20px 0;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
-        .tab-buttons {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .tab-btn {
-            background-color: #e3f2fd;
-            border: none;
-            color: #0d47a1;
-            padding: 12px 24px;
-            cursor: pointer;
-            font-weight: bold;
-            font-size: 1rem;
-            border-radius: 4px;
-            margin: 5px;
-            transition: background 0.3s;
-        }
-        .tab-btn.active, .tab-btn:hover {
-            background-color: #0d47a1;
-            color: #ffffff;
-        }
-        .tab-content {
-            display: none;
-            padding: 15px;
-            background: #fafafa;
-            border-radius: 4px;
-            border-left: 4px solid #ffb300;
-        }
-        .tab-content.active {
-            display: block;
-        }
+/* Tarjeta individual del director (Vista móvil por defecto: 100% ancho) */
+.director-card {
+    float: left;
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #e3f2fd;
+    border-radius: 8px;
+    background: #fafafa;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.director-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(13, 71, 161, 0.1);
+    background: #ffffff;
+}
+.avatar-container {
+    width: 130px;
+    height: 130px;
+    margin: 0 auto 15px auto;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #0d47a1;
+}
+.director-foto {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.director-card h3 {
+    color: #333;
+    font-size: 1.15rem;
+    margin-bottom: 5px;
+}
+.director-card .puesto {
+    color: #0d47a1;
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+.director-card .contacto-email {
+    color: #757575;
+    font-size: 0.85rem;
+}
 
-        /* Pie de Página */
-        footer {
-            background-color: #212121;
-            color: #ffffff;
-            text-align: center;
-            padding: 30px 20px;
-            margin-top: 40px;
-            font-size: 0.9rem;
-        }
+/* Contenido General (Bloques Tradicionales) */
+.row {
+    margin: 20px -10px;
+}
+.row::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.col {
+    float: left;
+    width: 100%;
+    padding: 0 10px;
+    margin-bottom: 20px;
+}
+.card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    min-height: 250px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border-top: 4px solid #0d47a1;
+}
+.card h3 {
+    color: #0d47a1;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #f4f6f9;
+    padding-bottom: 8px;
+}
+.card ul {
+    list-style-position: inside;
+    list-style-type: square;
+    padding-left: 5px;
+}
+.card li {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
 
-                /* Estilo Profesional para el Botón del Reglamento PDF */
-        .btn-reglamento {
-            display: inline-block;
-            background-color: #ffb300; /* Amarillo institucional */
-            color: #212121;            /* Texto oscuro para excelente contraste y lectura */
-            padding: 14px 28px;
-            font-size: 1rem;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 5px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
-        }
+/* Pestañas */
+.tabs-container {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    margin: 20px 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+.tab-buttons {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.tab-btn {
+    background-color: #e3f2fd;
+    border: none;
+    color: #0d47a1;
+    padding: 12px 24px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 4px;
+    margin: 5px;
+    transition: background 0.3s;
+}
+.tab-btn.active, .tab-btn:hover {
+    background-color: #0d47a1;
+    color: #ffffff;
+}
+.tab-content {
+    display: none;
+    padding: 15px;
+    background: #fafafa;
+    border-radius: 4px;
+    border-left: 4px solid #ffb300;
+}
+.tab-content.active {
+    display: block;
+}
 
-        .btn-reglamento:hover {
-            background-color: #ffa000; /* Un tono un poco más oscuro al pasar el mouse */
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-            transform: translateY(-2px); /* Efecto sutil de levante */
-        }
+/* Pie de Página */
+footer {
+    background-color: #212121;
+    color: #ffffff;
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 40px;
+    font-size: 0.9rem;
+}
 
-        .btn-reglamento:active {
-            transform: translateY(0);
-        }
+        /* Estilo Profesional para el Botón del Reglamento PDF */
+.btn-reglamento {
+    display: inline-block;
+    background-color: #ffb300; /* Amarillo institucional */
+    color: #212121;            /* Texto oscuro para excelente contraste y lectura */
+    padding: 14px 28px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+}
 
-        /* ========================================================
-           MEDIA QUERIES: SOLO PARA PANTALLAS HORIZONTALES / GRANDES
-           ======================================================== */
-        @media (min-width: 768px) {
-            .col {
-                width: 33.33%;
-            }
-            
-            /* Muestra las barras de "Área Académica" únicamente aquí */
-            .area-titulo {
-                display: block; 
-                float: left; /* Para romper el flujo de las tarjetas anteriores */
-            }
+.btn-reglamento:hover {
+    background-color: #ffa000; /* Un tono un poco más oscuro al pasar el mouse */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    transform: translateY(-2px); /* Efecto sutil de levante */
+}
 
-            /* CONTROL DE ANCHOS DEPENDIENDO DEL ÁREA */
-            
-            /* Preparatoria tiene 1 director: Ocupa el 100% o se centra */
-            .ancho-1-director {
-                width: 33.33%;
-                float: none;
-                margin: 0 auto 20px auto; /* Centra la tarjeta */
-            }
+.btn-reglamento:active {
+    transform: translateY(0);
+}
 
-            /* Humanidades tiene 2 directores: Se dividen 50% y 50% */
-            .ancho-2-directores {
-                width: 50%;
-            }
+/* ========================================================
+    MEDIA QUERIES: SOLO PARA PANTALLAS HORIZONTALES / GRANDES
+    ======================================================== */
+@media (min-width: 799px) {
+    .col {
+        width: 33.33%;
+    }
+    
+    /* Muestra las barras de "Área Académica" únicamente aquí */
+    .area-titulo {
+        display: block; 
+        float: left; /* Para romper el flujo de las tarjetas anteriores */
+    }
 
-            /* Ingeniería tiene 1 director: Igual que preparatoria */
-            .ancho-1-director-izq {
-                width: 33.33%;
-            }
+    /* CONTROL DE ANCHOS DEPENDIENDO DEL ÁREA */
+    
+    /* Preparatoria tiene 1 director: Ocupa el 100% o se centra */
+    .ancho-1-director {
+        width: 33.33%;
+        float: none;
+        margin: 0 auto 20px auto; /* Centra la tarjeta */
+    }
 
-            /* Otras áreas o por defecto: 3 columnas (33.33%) */
-            .ancho-3-directores {
-                width: 33.33%;
-            }
+    /* Humanidades tiene 2 directores: Se dividen 50% y 50% */
+    .ancho-2-directores {
+        width: 50%;
+    }
 
-            /* Otras áreas tiene 4 directores: se acomodan en bloques de 50% (2 arriba y 2 abajo) */
-            .ancho-4-directores {
-                width: 50%;
-                float: left;
-                text-align: center;
-            }
-            
-        }
+    /* Ingeniería tiene 1 director: Igual que preparatoria */
+    .ancho-1-director-izq {
+        width: 33.33%;
+    }
+
+    /* Otras áreas o por defecto: 3 columnas (33.33%) */
+    .ancho-3-directores {
+        width: 33.33%;
+    }
+
+    /* Otras áreas tiene 4 directores: se acomodan en bloques de 50% (2 arriba y 2 abajo) */
+    .ancho-4-directores {
+        width: 50%;
+        float: left;
+        text-align: center;
+    }
+    
+}
 
