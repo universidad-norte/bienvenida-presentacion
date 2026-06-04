@@ -265,7 +265,7 @@ footer {
 /* ========================================================
     MEDIA QUERIES: SOLO PARA PANTALLAS HORIZONTALES / GRANDES
     ======================================================== */
-@media (min-width: 794px) {
+@media (min-width: 810px) {
     .col {
         width: 33.33%;
     }
