@@ -103,7 +103,7 @@ body {
 
 /* Modificado para que los títulos se inclinen a la izquierda */
 .contenido-principal {
-    max-width: 1200px;
+    max-width: 1500px;
     margin: 40px auto 20px auto;
     padding: 0 20px;
     text-align: left; /* 👈 Cambiado de center a left */
@@ -111,9 +111,9 @@ body {
 
 .titulo-directores {
     font-size: 3.4rem;
-    color: #212121;
+    color: #1a1a1a;
     font-weight: bold;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
 .subtitulo-directores {
@@ -156,7 +156,7 @@ body {
 }
 
 .rector-puesto {
-    font-size: 0.95rem;
+    font-size: 1.5rem;
     color: var(--azul-un);
     font-weight: bold;
     letter-spacing: 1px;
@@ -181,13 +181,13 @@ body {
    DISEÑO DE FRANJA UNIFICADA (PREPARATOTIA)
    ======================================================== */
 
-.seccion-preparatoria {
+.seccion-un-director {
     width: 100%;
     margin-bottom: 40px;
 }
 
 /* Caja contenedora transparente o con fondo blanco, une la foto y la franja */
-.tarjeta-director-limpia {
+.tarjeta-un-director {
     display: flex;
     flex-direction: column; /* En móvil se apila vertical */
     align-items: center;
@@ -213,7 +213,7 @@ body {
 }
 
 /* Columna Derecha: Actúa como la franja completa */
-.franja-datos-derecha {
+.datos-un-director {
     flex: 1;
     width: 100%;
     display: flex;
@@ -222,11 +222,11 @@ body {
 
 /* La franja gris superior que va "hasta arriba" de los datos */
 .franja-titulo-gris {
-    background-color: #f1f3f5; /* El tono gris del PDF */
+    background-color: #f1f3f5; 
     color: #495057;
-    font-size: 0.9rem;
+    font-size: 1.4rem;
     font-weight: bold;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     letter-spacing: 1px;
     padding: 10px 20px;
     width: 100%;
@@ -244,20 +244,21 @@ body {
     align-items: flex-start; /* 2. Alinea el inicio de los textos a la izquierda */
     
     margin: auto; /* 3. Empuja la caja al centro perfecto del cuadro derecho */
-    max-width: 450px; /* 4. Evita que el texto se disperse y se mantenga agrupado */
+    max-width: 650px; /* 4. Evita que el texto se disperse y se mantenga agrupado */
     width: 100%;
 }
 
 /* Tipografías limpias */
 .director-nombre {
-    font-size: 3.4rem;
+    font-size: 3.0rem;
     color: #1a1a1a;
     font-weight: bold;
     margin-bottom: 6px;
+    letter-spacing: 0.5px;
 }
 
 .director-puesto {
-    font-size: 1rem;
+    font-size: 1.5rem;
     color: var(--azul-un);
     font-weight: bold;
     margin-bottom: 12px;
@@ -266,13 +267,165 @@ body {
 .contacto-email a {
     color: #555555;
     text-decoration: none;
-    font-size: 0.85rem;
+    font-size: 1rem;
 }
 
 .ext-tel {
-    font-size: 0.85rem;
+    font-size: 1rem;
     color: #666666;
     margin-top: 4px;
+}
+
+/* ========================================================
+   SECCIÓN: DOS DIRECTORES (LADO A LADO)
+   ======================================================== */
+
+.seccion-dos-directores {
+    width: 100%;
+    margin-bottom: 40px;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    overflow: hidden; /* Mantiene el borde redondeado con la franja superior */
+}
+
+/* El contenedor que agrupa a los dos directores */
+.contenedor-pares {
+    display: flex;
+    flex-direction: column; /* En móvil se muestran uno abajo del otro */
+    width: 100%;
+}
+
+/* Cada uno de los bloques individuales (50% del ancho en PC) */
+.tarjeta-par-individual {
+    display: flex;
+    flex-direction: column; /* En celular la foto va arriba del texto */
+    align-items: center;
+    padding: 25px;
+    width: 100%;
+}
+
+/* Aplicamos una pequeña separación o borde sutil entre ambos directores en móvil */
+.tarjeta-par-individual:first-child {
+    border-bottom: 1px solid #e2e8f0;
+}
+
+/* ========================================================
+   AJUSTE DE FOTO MÁS DELGADA PARA SECCIÓN DE DOS DIRECTORES
+   ======================================================== */
+
+.director-foto-contenedor-dos {
+    width: 300px;       /* Reducimos el ancho para hacerla más delgada */
+    height: 500px;      /* Mantenemos una buena altura rectangular */
+    flex-shrink: 0;     /* Evita que se deforme con el texto */
+    overflow: hidden;
+    border-radius: 8px; /* Mismo redondeado del PDF */
+}
+
+/* Tipografías limpias */
+.director-nombre-para-dos {
+    font-size: 2.0rem;
+    color: #1a1a1a;
+    font-weight: bold;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+}
+
+/* ========================================================
+   SECCIÓN: TRES DIRECTORES (3 COLUMNAS IGUALES)
+   ======================================================== */
+
+.seccion-tres-directores {
+    width: 100%;
+    margin-bottom: 30px;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* El contenedor que agrupa a las 3 tercias */
+.contenedor-tercias {
+    display: flex;
+    flex-direction: column; /* En móvil se apilan verticalmente */
+    width: 100%;
+}
+
+/* Tarjeta individual (Ocupará el 33.33% en pantallas grandes) */
+.tarjeta-tercia-individual {
+    display: flex;
+    flex-direction: column; /* Foto ARRIBA, texto ABAJO */
+    align-items: center;    /* Centra la foto y el bloque de texto horizontalmente */
+    padding: 25px; 
+    width: 100%;
+}
+
+/* Separadores sutiles para vista móvil */
+.tarjeta-tercia-individual:not(:last-child) {
+    border-bottom: 1px solid #e2e8f0;
+}
+
+/* Bloque de texto exclusivo para diseño vertical (Texto alineado a la izquierda) */
+.bloque-texto-interior-vertical {
+    padding-top: 15px; /* Espacio entre la foto de arriba y el texto de abajo */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinea los renglones a la izquierda */
+    max-width: 380px;        /* Acota el ancho para que no se disperse en la columna */
+    width: 100%;
+}
+
+/* Contenedor de la foto */
+.director-foto-contenedor-tres{
+    width: 450px;
+    height: 300px;
+    flex-shrink: 0;
+    margin: 20px; /* Separación de la foto en móvil */
+}
+
+/* ========================================================
+   RESPONSIVO: ALINEACIÓN EN 3 COLUMNAS PARA PC
+   ======================================================== */
+@media (min-width: 992px) {
+    .contenedor-tercias {
+        flex-direction: row; /* Se ponen los tres lado a lado */
+        align-items: stretch;
+    }
+
+    .tarjeta-tercia-individual {
+        width: 33.333%; /* División perfecta en tres partes iguales */
+        padding: 30px 20px;
+    }
+
+    /* Quitamos el borde de móvil y ponemos las líneas divisorias verticales */
+    .tarjeta-tercia-individual:not(:last-child) {
+        border-bottom: none;
+        border-right: 1px solid #e2e8f0; /* Líneas separadoras entre columnas */
+    }
+}
+
+
+
+/* ========================================================
+   RESPONSIVO: COMPORTAMIENTO LADO A LADO PARA PC
+   ======================================================== */
+@media (min-width: 992px) {
+    .contenedor-pares {
+        flex-direction: row; /* Se ponen en paralelo: mitad y mitad */
+        align-items: stretch;
+    }
+
+    .tarjeta-par-individual {
+        flex-direction: row; /* Foto a la izquierda, texto a la derecha */
+        width: 50%; /* Ocupa exactamente la mitad de la sección */
+        padding: 30px;
+    }
+
+    /* Quitamos el borde inferior de móvil y ponemos uno vertical divisorio */
+    .tarjeta-par-individual:first-child {
+        border-bottom: none;
+        border-right: 1px solid #e2e8f0; /* Línea divisoria central sutil */
+    }
 }
 
 
@@ -293,7 +446,7 @@ body {
         margin-left: 30px; /* Separación entre el bloque de texto y la foto */
     }
 
-    .tarjeta-director-limpia {
+    .tarjeta-un-director {
         flex-direction: row; /* Foto izquierda, franja derecha */
         align-items: stretch; /* Fuerza a que la franja derecha ocupe toda la altura */
     }
