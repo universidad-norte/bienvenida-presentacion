@@ -34,13 +34,6 @@
    ESTILOS DE LA PRIMERA SECCIÓN: HEADER Y TÍTULO PRINCIPAL
    ======================================================== */
 
-/* Reset básico para que no queden márgenes blancos extraños */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
 body {
     /* Aquí le decimos que use tu fuente primero, y si no carga, use Arial como respaldo */
     font-family: 'FuenteInstitucional', Arial, sans-serif; 
@@ -49,13 +42,13 @@ body {
 
 /* El cuadro azul del encabezado */
 .header-azul {
-    background-color: #0d47a1; /* Azul institucional */
-    color: #ffffff;
+    background-color: var(--azul-un);
+    color: var(--blanco);
     padding: 30px 40px;
     display: flex;
     flex-direction: column; /* En celulares se acomoda uno abajo de otro */
     gap: 20px;
-    border-bottom: 5px solid #ffb300; /* Línea de acento dorada/amarilla */
+    border-bottom: 5px solid var(--oro-un);
 }
 
 /* Columna Izquierda */
@@ -141,8 +134,8 @@ body {
     flex-direction: column-reverse; /* En celulares pone la foto arriba y el texto abajo */
     align-items: center;
     justify-content: space-between;
-    background-color: #ffffff;
-    border: 1px solid #e2e8f0; /* Contorno gris sutil */
+    background-color: var(--blanco);
+    border: 1px solid #e2e8f0;
     border-radius: 8px;
     padding: 30px;
     gap: 20px;
@@ -164,7 +157,7 @@ body {
 
 .rector-puesto {
     font-size: 0.95rem;
-    color: #0d47a1; /* Azul institucional para resaltar */
+    color: var(--azul-un);
     font-weight: bold;
     letter-spacing: 1px;
 }
@@ -198,8 +191,8 @@ body {
     display: flex;
     flex-direction: column; /* En móvil se apila vertical */
     align-items: center;
-    background-color: #ffffff;
-    border: 1px solid #e2e8f0; /* Borde exterior sutil */
+    background-color: var(--blanco);
+    border: 1px solid #e2e8f0;
     border-radius: 8px;
     overflow: hidden; /* Mantiene los bordes redondeados limpios */
 }
@@ -265,7 +258,7 @@ body {
 
 .director-puesto {
     font-size: 1rem;
-    color: #0d47a1;
+    color: var(--azul-un);
     font-weight: bold;
     margin-bottom: 12px;
 }
@@ -298,16 +291,6 @@ body {
     
     .rector-foto-contenedor {
         margin-left: 30px; /* Separación entre el bloque de texto y la foto */
-    }
-
-    .tarjeta-director-invertida {
-        flex-direction: row; /* Foto a la izquierda, textos a la derecha */
-        padding: 40px;
-    }
-
-    .director-datos-derecha {
-        text-align: left; /* Alinea los textos y la barra gris a la izquierda */
-        padding-left: 30px; /* Separación con la foto de la izquierda */
     }
 
     .tarjeta-director-limpia {
