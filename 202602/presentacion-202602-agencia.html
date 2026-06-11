@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universidad del Norte - Conoce a tus Directores</title>
+    <link rel="stylesheet" href="style-agencia.css">
+    
+</head>
+<body>
+
+    <header class="header-azul">
+        <div class="header-col-izquierda">
+            <h1 class="universidad-nombre">Universidad del Norte®</h1>
+            <p class="bienvenida-texto">¡Bienvenidos estudiantes al Tetramestre mayo - agosto 2026!</p>
+        </div>
+        
+        <div class="header-col-derecha">
+            <div class="logo-contenedor">
+                <img src="../img/logo.png" alt="Logo Universidad del Norte" class="logo-rectangulo">
+            </div>
+            <p class="lema-texto">Te acompañamos a desarrollar tus competencias profesionales y construir un futuro exitoso</p>
+        </div>
+    </header>
+
+    <main class="contenido-principal">
+        <h2 class="titulo-directores">Conoce a tus Directores</h2>
+        <p class="subtitulo-directores">Estamos aquí para acompañarte en cada paso de tu camino académico.</p>
+
+        <section class="seccion-rectoria">
+            <div class="tarjeta-rector">
+                <div class="rector-datos">
+                    <h3 class="rector-nombre">ING. MARCELO J. GONZÁLEZ VILLARREAL, M.A.</h3>
+                    <p class="rector-puesto">Rector</p>
+                </div>
+                
+                <div class="rector-foto-contenedor">
+                    <img src="directores-original/marcelo.jpg" alt="Ing. Marcelo J. González Villarreal" class="rector-foto">
+                </div>
+            </div>
+        </section>
+
+        <section class="seccion-preparatoria">
+            <div class="tarjeta-director-limpia">
+                
+                <div class="director-foto-contenedor">
+                    <img src="directores-original/gregorio.jpg" alt="Lic. José Gregorio Peña Sánchez" class="director-foto">
+                </div>
+
+                <div class="franja-datos-derecha">
+                    <div class="franja-titulo-gris">Preparatoria</div>
+                    <div class="bloque-texto-interior">
+                        <h3 class="director-nombre">LIC. JOSÉ GREGORIO PEÑA SÁNCHEZ, M.E.U.</h3>
+                        <p class="director-puesto">Director de Preparatoria General</p>
+                        <p class="contacto-email"><a href="mailto:gregorio.pena@un.edu.mx">gregorio.pena@un.edu.mx</a></p>
+                        <p class="ext-tel">Extensión: 127</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+    </main>
+    
+    <script>
+        function cambiarTab(evt, tabId) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabId).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+</body>
+</html>

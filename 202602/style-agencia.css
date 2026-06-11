@@ -1,0 +1,332 @@
+/* ========================================================
+    1. FUENTES CORPORATIVAS (Carga del archivo .otf)
+    ======================================================== */
+@font-face {
+    font-family: 'FuenteInstitucional';
+    src: url('../fonts/MinionPro-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* ========================================================
+    2. PALETA DE COLORES OFICIAL (Variables CSS3)
+    ======================================================== */
+:root {
+    --azul-un: #0d47a1;         /* Azul Principal Institucional */
+    --oro-un: #ffb300;          /* Oro/Amarillo de Acento */
+    --oro-hover: #ffa000;       /* Tono de interacción botones */
+    --gris-fondo: #f4f6f9;      /* Fondo general de la página */
+    --texto-oscuro: #212121;    /* Color de texto principal */
+    --blanco: #ffffff;
+}
+
+/* ========================================================
+    3. ESTILOS GENERALES Y RESET
+    ======================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* ========================================================
+   ESTILOS DE LA PRIMERA SECCIÓN: HEADER Y TÍTULO PRINCIPAL
+   ======================================================== */
+
+/* Reset básico para que no queden márgenes blancos extraños */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* Aquí le decimos que use tu fuente primero, y si no carga, use Arial como respaldo */
+    font-family: 'FuenteInstitucional', Arial, sans-serif; 
+    background-color: #f4f6f9;
+}
+
+/* El cuadro azul del encabezado */
+.header-azul {
+    background-color: #0d47a1; /* Azul institucional */
+    color: #ffffff;
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: column; /* En celulares se acomoda uno abajo de otro */
+    gap: 20px;
+    border-bottom: 5px solid #ffb300; /* Línea de acento dorada/amarilla */
+}
+
+/* Columna Izquierda */
+.header-col-izquierda {
+    flex: 1;
+}
+
+.universidad-nombre {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.bienvenida-texto {
+    font-size: 1.1rem;
+    color: #ffffff;
+    opacity: 0.95;
+}
+
+/* Columna Derecha */
+.header-col-derecha {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrado en móvil */
+    justify-content: space-between;
+}
+
+/* Caja para el logo rectangular */
+.logo-contenedor {
+    width: 220px; /* Ancho para mantener la forma de rectángulo */
+    height: auto;
+    margin-bottom: 12px;
+}
+
+.logo-rectangulo {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.lema-texto {
+    font-size: 0.95rem;
+    color: #ffb300; /* Color amarillo/oro para resaltar el mensaje */
+    font-weight: 500;
+    text-align: center;
+}
+/* ========================================================
+   ESTILOS ACTUALIZADOS: TÍTULOS Y SECCIÓN DEL RECTOR
+   ======================================================== */
+
+/* Modificado para que los títulos se inclinen a la izquierda */
+.contenido-principal {
+    max-width: 1200px;
+    margin: 40px auto 20px auto;
+    padding: 0 20px;
+    text-align: left; /* 👈 Cambiado de center a left */
+}
+
+.titulo-directores {
+    font-size: 3.4rem;
+    color: #212121;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.subtitulo-directores {
+    font-size: 1.0rem;
+    color: #666666;
+    margin-bottom: 40px; /* Espacio antes de iniciar la sección del Rector */
+}
+
+/* Contenedor de la sección del Rector */
+.seccion-rectoria {
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+/* Tarjeta estructurada en dos columnas usando Flexbox */
+.tarjeta-rector {
+    display: flex;
+    flex-direction: column-reverse; /* En celulares pone la foto arriba y el texto abajo */
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0; /* Contorno gris sutil */
+    border-radius: 8px;
+    padding: 30px;
+    gap: 20px;
+}
+
+/* Columna de textos (Izquierda en PC) */
+.rector-datos {
+    flex: 1;
+    text-align: center; /* Centrado en móvil */
+}
+
+.rector-nombre {
+    font-size: 3.0rem;
+    color: #1a1a1a;
+    font-weight: bold;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+}
+
+.rector-puesto {
+    font-size: 0.95rem;
+    color: #0d47a1; /* Azul institucional para resaltar */
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Columna de la foto (Derecha en PC) */
+.rector-foto-contenedor {
+    width: 600px;
+    height: 500px;
+    flex-shrink: 0;
+}
+
+.rector-foto {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px; /* Esquinas ligeramente redondeadas */
+    border: 1px solid #e2e8f0;
+}
+
+/* ========================================================
+   DISEÑO DE FRANJA UNIFICADA (PREPARATOTIA)
+   ======================================================== */
+
+.seccion-preparatoria {
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+/* Caja contenedora transparente o con fondo blanco, une la foto y la franja */
+.tarjeta-director-limpia {
+    display: flex;
+    flex-direction: column; /* En móvil se apila vertical */
+    align-items: center;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0; /* Borde exterior sutil */
+    border-radius: 8px;
+    overflow: hidden; /* Mantiene los bordes redondeados limpios */
+}
+
+/* Contenedor de la foto */
+.director-foto-contenedor {
+    width: 600px;
+    height: 500px;
+    flex-shrink: 0;
+    margin: 20px; /* Separación de la foto en móvil */
+}
+
+.director-foto {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Columna Derecha: Actúa como la franja completa */
+.franja-datos-derecha {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* La franja gris superior que va "hasta arriba" de los datos */
+.franja-titulo-gris {
+    background-color: #f1f3f5; /* El tono gris del PDF */
+    color: #495057;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px 20px;
+    width: 100%;
+    text-align: center; /* Centrado en móvil */
+}
+
+/* Bloque interior donde cae el nombre y datos sin divisiones extra */
+.bloque-texto-interior {
+    padding: 20px 25px;
+    
+    /* 1. Centramos el contenedor por completo dentro de la franja */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* 2. Alinea el inicio de los textos a la izquierda */
+    
+    margin: auto; /* 3. Empuja la caja al centro perfecto del cuadro derecho */
+    max-width: 450px; /* 4. Evita que el texto se disperse y se mantenga agrupado */
+    width: 100%;
+}
+
+/* Tipografías limpias */
+.director-nombre {
+    font-size: 3.4rem;
+    color: #1a1a1a;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.director-puesto {
+    font-size: 1rem;
+    color: #0d47a1;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.contacto-email a {
+    color: #555555;
+    text-decoration: none;
+    font-size: 0.85rem;
+}
+
+.ext-tel {
+    font-size: 0.85rem;
+    color: #666666;
+    margin-top: 4px;
+}
+
+
+/* ========================================================
+   RESPONSIVO: DISTRIBUCIÓN LADO A LADO PARA COMPUTADORAS
+   ======================================================== */
+@media (min-width: 768px) {
+    .tarjeta-rector {
+        flex-direction: row; /* Se alinea horizontalmente en pantallas grandes */
+        padding: 40px;
+    }
+
+    .rector-datos {
+        text-align: left; /* Nombre e indicación de RECTOR alineados a la izquierda */
+    }
+    
+    .rector-foto-contenedor {
+        margin-left: 30px; /* Separación entre el bloque de texto y la foto */
+    }
+
+    .tarjeta-director-invertida {
+        flex-direction: row; /* Foto a la izquierda, textos a la derecha */
+        padding: 40px;
+    }
+
+    .director-datos-derecha {
+        text-align: left; /* Alinea los textos y la barra gris a la izquierda */
+        padding-left: 30px; /* Separación con la foto de la izquierda */
+    }
+
+    .tarjeta-director-limpia {
+        flex-direction: row; /* Foto izquierda, franja derecha */
+        align-items: stretch; /* Fuerza a que la franja derecha ocupe toda la altura */
+    }
+
+    .director-foto-contenedor {
+        margin: 25px; /* Margen elegante para la foto izquierda */
+    }
+
+    .franja-titulo-gris {
+        text-align: left; /* Título pegado a la izquierda dentro de su franja */
+        padding: 12px 25px;
+    }
+
+    .bloque-texto-interior {
+        text-align: left; /* Datos alineados a la izquierda */
+        padding: 20px 25px;
+    }
+
+}
