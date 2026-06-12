@@ -193,7 +193,108 @@
             </div>
         </section>
 
+        <section class="row">
+            <div class="col">
+                <div class="card">
+                    <h3>Servicios Estudiantiles</h3>
+                    <ul>
+                        <li>Asesorías Académicas</li>
+                        <li>Departamento Formacion Integral</li>
+                        <li>Bolsa de Trabajo y Prácticas</li>
+                        <li>Coordinación de Deportes</li>
+                        <li>Asuntos Estudiantiles (DAE)</li>
+                        <li>Bolsa de Trabajo </li>
+                        <li>Prácticas Profesionales</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <h3>Nuestras Instalaciones</h3>
+                    <ul>
+                        <li>Biblioteca <b>C.P. Ramón Cárdenas C.</b></li>
+                        <li>Laboratorios de Cómputo y Redes</li>
+                        <li>Laboratorios de Ciencias y Talleres</li>
+                        <li>Sala de Juicios Orales</li>
+                        <li>Institución Mediación, Asesoria, Litigio</li>
+                        <li>Canchas y Áreas Recreativas</li>
+                        <li>Camara Gesell</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <h3>Eventos e Impacto</h3>
+                    <ul>
+                        <li>Conferencias</li>
+                        <li>Visitas a Empresas</li>
+                        <li>Feria del Libro</li>
+                        <li>Feria de Ciencias</li>
+                        <li>Servicio de Apoyo a la Comunidad</li>
+                        <li>Altares de Muertos</li>
+                        <li>Evento ECOS (Fin de Tetramestre)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="tabs-container">
+            <div class="tab-buttons">
+                <button class="tab-btn active" onclick="switchTab(event, 'reglamento')">Reglamento Esencial</button>
+                <button class="tab-btn" onclick="switchTab(event, 'digital')">Portales Digitales</button>
+            </div>
+
+            <div id="reglamento" class="tab-content active">
+                <h4 class="tab-titulo">Tu Compromiso y Convivencia Universitaria</h4>
+                
+                <p style="margin-bottom: 15px; color: #444;">
+                    Para garantizar un entorno armónico, seguro y de excelencia académica que impulse tu proyecto de vida, es fundamental que toda nuestra comunidad comparta los mismos valores de respeto, disciplina, puntualidad y honestidad. 
+                </p>
+                
+                <p style="margin-bottom: 20px; color: #444; font-weight: 500;">
+                    Te invitamos a leer de forma detallada, conocer y consultar el marco normativo que guiará tu vida académica durante este ciclo institucional:
+                </p>
+
+                <div class="contenedor-btn-reglamento">
+                    <a href="../doc/reglamento_general_un.pdf" target="_blank" class="btn-reglamento">
+                        📥 Descargar Reglamento Universitario Completo (PDF)
+                    </a>
+                </div>
+
+                <!-- <div style="background-color: #fff; border-left: 4px solid #ffb300; padding: 12px; margin-top: 15px; border-radius: 0 4px 4px 0;">
+                    <span style="color:#0d47a1; font-weight:bold;">📌 Recordatorio Importante:</span> 
+                    Como parte de nuestro compromiso con la salud y el medio ambiente, recuerda que somos una <strong>Universidad Libre de Tabaco y Cigarros Electrónicos</strong> en todas nuestras instalaciones.
+                </div> -->
+            </div>
+
+            <div id="digital" class="tab-content">
+                <h4 style="color:#0d47a1; margin-bottom:10px;">Accesos Rápidos:</h4>
+                <p>• Sitio Oficial: <a href="http://un.edu.mx" target="_blank" style="color:#0d47a1;">un.edu.mx</a></p>
+                <p>• Aula Virtual: <a href="http://un.neolms.com" target="_blank" style="color:#0d47a1;">un.neolms.com</a></p>
+                <p>• Facebook: <a href="https://www.facebook.com/UNMTY" target="_blank" style="color:#0d47a1;">@UNMTY</a></p>
+                <p>• Instagram: <a href="https://www.instagram.com/un_mty/" target="_blank" style="color:#0d47a1;">@UN_MTY</a></p>
+            </div>
+        </section>
     </main>
-    
+
+    <footer>
+        <p>&copy; 2026 Universidad del Norte. Todos los derechos reservados. Conmutador: 81-88-51-71-00</p>
+    </footer>
+
+    <script>
+        function switchTab(evt, tabId) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].className = tabcontent[i].className.replace(" active", "");
+            }
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabId).className += " active";
+            evt.currentTarget.className += " active";
+        }
+    </script>
 </body>
 </html>
