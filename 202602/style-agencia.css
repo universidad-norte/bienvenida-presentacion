@@ -39,14 +39,19 @@ body {
     font-family: 'FuenteInstitucional', Arial, sans-serif; 
     background-color: #f4f6f9;
 }
-
 /* El cuadro azul del encabezado */
 .header-azul {
     background-color: var(--azul-un);
     color: var(--blanco);
     padding: 30px 40px;
     display: flex;
-    flex-direction: column; /* En celulares se acomoda uno abajo de otro */
+    
+    /* 1. CAMBIO CLAVE: Cambiamos 'column' por 'row' para que se pongan en la misma línea */
+    flex-direction: row; 
+    
+    /* 2. Distribuye una columna al extremo izquierdo y otra al extremo derecho */
+    justify-content: space-between; 
+    align-items: center; /* Centra verticalmente ambos bloques */
     gap: 20px;
     border-bottom: 5px solid var(--oro-un);
 }
@@ -54,6 +59,7 @@ body {
 /* Columna Izquierda */
 .header-col-izquierda {
     flex: 1;
+    text-align: left; /* Asegura que el texto inicie a la izquierda */
 }
 
 .universidad-nombre {
@@ -64,7 +70,7 @@ body {
 }
 
 .bienvenida-texto {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     color: #ffffff;
     opacity: 0.95;
 }
@@ -74,13 +80,13 @@ body {
     flex: 1;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centrado en móvil */
-    justify-content: space-between;
+    align-items: flex-end; /* Alinea el logo y el lema magnéticamente a la derecha */
+    text-align: right;     /* Alinea el texto del lema a la derecha */
 }
 
 /* Caja para el logo rectangular */
 .logo-contenedor {
-    width: 220px; /* Ancho para mantener la forma de rectángulo */
+    width: 220px; 
     height: auto;
     margin-bottom: 12px;
 }
@@ -92,11 +98,12 @@ body {
 }
 
 .lema-texto {
-    font-size: 0.95rem;
-    color: #ffb300; /* Color amarillo/oro para resaltar el mensaje */
+    font-size: 1.2rem; /* Lo bajé un poquito para que no compita en tamaño con la bienvenida */
+    color: #ffb300; 
     font-weight: 500;
-    text-align: center;
+    max-width: 400px; /* Evita que el texto largo se desparrame si la pantalla es muy gigante */
 }
+
 /* ========================================================
    ESTILOS ACTUALIZADOS: TÍTULOS Y SECCIÓN DEL RECTOR
    ======================================================== */
@@ -117,7 +124,7 @@ body {
 }
 
 .subtitulo-directores {
-    font-size: 1.0rem;
+    font-size: 1.5rem;
     color: #666666;
     margin-bottom: 40px; /* Espacio antes de iniciar la sección del Rector */
 }
@@ -475,27 +482,23 @@ body {
 .contenedor-btn-reglamento {
     text-align: center;
     margin: 25px 0;
-    font-size: 1.5rem;
     /*style="text-align: center; margin: 25px 0;"*/
 }
 
-/* Pie de Página */
-footer {
-    background-color: #212121;
-    color: #ffffff;
-    text-align: center;
-    padding: 30px 20px;
-    margin-top: 40px;
-    font-size: 0.9rem;
+.texto-reglamento {
+    font-size: 1.5rem;
+    color: #444444;
+    margin-bottom: 15px;
+    /*style="margin-bottom: 15px; color: #444;"*/
 }
 
-        /* Estilo Profesional para el Botón del Reglamento PDF */
+/* Estilo Profesional para el Botón del Reglamento PDF */
 .btn-reglamento {
     display: inline-block;
     background-color: #ffb300; /* Amarillo institucional */
     color: #212121;            /* Texto oscuro para excelente contraste y lectura */
     padding: 14px 28px;
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: bold;
     text-decoration: none;
     border-radius: 5px;
@@ -513,19 +516,31 @@ footer {
     transform: translateY(0);
 }
 
+.titulo-portales-digitales{
+    color:0d47a1;
+    margin-bottom: 10px;
+    /*style="color:#0d47a1; margin-bottom:10px;"*/
+}
 
+.elementos-portales-digitales{
+    color:#0d47a1;
+    /*style="color:#0d47a1;"*/
+}
 
-
-
-
-
-
-
+/* Pie de Página */
+footer {
+    background-color: #212121;
+    color: #ffffff;
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 40px;
+    font-size: 1.5rem;
+}
 
 /* ========================================================
-   RESPONSIVO: ALINEACIÓN EN 3 COLUMNAS PARA PC
+   RESPONSIVO: DISTRIBUCIÓN LADO A LADO PARA COMPUTADORAS
    ======================================================== */
-@media (min-width: 992px) {
+@media (min-width: 768px) {
     .contenedor-tercias {
         flex-direction: row; /* Se ponen los tres lado a lado */
         align-items: stretch;
@@ -558,13 +573,8 @@ footer {
         border-bottom: none;
         border-right: 1px solid #e2e8f0; /* Línea divisoria central sutil */
     }
-}
 
 
-/* ========================================================
-   RESPONSIVO: DISTRIBUCIÓN LADO A LADO PARA COMPUTADORAS
-   ======================================================== */
-@media (min-width: 768px) {
     .col {
         width: 33.33%;
     }
@@ -599,6 +609,11 @@ footer {
     .bloque-texto-interior {
         text-align: left; /* Datos alineados a la izquierda */
         padding: 20px 25px;
+    }
+
+    .header-col-derecha {
+        align-items: center;
+        text-align: center;
     }
 
 }
